@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Skontaktuj się z Olka Detailing — umów wizytę, zapytaj o detailing, korektę lakieru lub folię PPF. Gdynia i okolice."
+    />
+    <title>Kontakt | Olka Detailing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/css/static-pages.css" />
+  </head>
+  <body>
+    <div class="site">
+      <header class="site-header">
+        <div class="site-header__inner">
+          <a class="site-header__logo" href="/">
+            <img
+              class="site-header__logo-img"
+              src="/olka-logo.webp"
+              alt="Olka Detailing"
+              width="180"
+              height="40"
+              decoding="async"
+            />
+          </a>
+          <div class="site-header__phone">
+            <a class="site-header__phone-link" href="tel:+48734753083">+48 734 753 083</a>
+          </div>
+          <div class="site-header__cta">
+            <a class="site-header__cta-link" href="/kontakt.html">Umów wizytę</a>
+          </div>
+        </div>
+        <nav class="site-nav" aria-label="Główna nawigacja">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="/">Strona główna</a></li>
+            <li><a class="site-nav__link" href="/cennik.html">Cennik</a></li>
+            <li><a class="site-nav__link" href="/realizacje">Realizacje</a></li>
+            <li>
+              <a class="site-nav__link site-nav__link--active" href="/kontakt.html" aria-current="page"
+                >Kontakt</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="site__main" id="main">
+        <div class="page-hero od-container">
+          <h1 class="page-hero__title">Kontakt</h1>
+          <p class="page-hero__lead">
+            Napisz lub zadzwoń — dobierzemy termin i zakres prac pod Twoje auto.
+          </p>
+        </div>
+
+        <section class="contact-section od-container" aria-labelledby="contact-form-heading">
+          <h2 id="contact-form-heading" class="visually-hidden">Formularz kontaktowy</h2>
+          <div class="contact-grid">
+            <form class="contact-form" action="#" method="post">
+              <div class="contact-form__row contact-form__row--split">
+                <div class="contact-form__group">
+                  <label class="contact-form__label" for="contact-name">Imię i nazwisko</label>
+                  <input
+                    class="contact-form__input"
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+                <div class="contact-form__group">
+                  <label class="contact-form__label" for="contact-phone">Numer telefonu</label>
+                  <input
+                    class="contact-form__input"
+                    id="contact-phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    placeholder="np. 500 600 700"
+                    required
+                    pattern="(\+48\s?)?[0-9]{3}\s?[0-9]{3}\s?[0-9]{3}"
+                    title="Podaj 9 cyfr (np. 500 600 700) lub z prefiksem +48"
+                  />
+                </div>
+              </div>
+              <div class="contact-form__group">
+                <label class="contact-form__label" for="contact-service">Wybór usługi</label>
+                <select class="contact-form__select" id="contact-service" name="service" required>
+                  <option value="" disabled selected hidden>Wybierz usługę</option>
+                  <option value="interior">Interior Detailing</option>
+                  <option value="exterior">Exterior Detailing</option>
+                  <option value="full">Full Detail</option>
+                  <option value="other">Inne</option>
+                </select>
+              </div>
+              <div class="contact-form__group">
+                <label class="contact-form__label" for="contact-date">Preferowana data</label>
+                <input
+                  class="contact-form__input"
+                  id="contact-date"
+                  name="preferred_date"
+                  type="date"
+                  required
+                />
+              </div>
+              <div class="contact-form__group">
+                <label class="contact-form__label" for="contact-message">Wiadomość</label>
+                <textarea
+                  class="contact-form__textarea"
+                  id="contact-message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button class="contact-form__submit" type="submit">Wyślij zapytanie</button>
+            </form>
+
+            <aside class="contact-aside" aria-labelledby="contact-aside-title">
+              <h2 id="contact-aside-title" class="contact-aside__title">Olka Detailing</h2>
+              <p class="contact-aside__text">
+                Odpowiadamy w dni robocze. Jeśli wolisz od razu umówić wizytę, zadzwoń —
+                <a href="tel:+48734753083">+48 734 753 083</a>.
+              </p>
+              <p class="contact-aside__text">
+                Lokalizacja: <strong>Gdynia</strong>, woj. pomorskie.
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="map-section od-container" aria-labelledby="map-heading">
+          <h2 id="map-heading" class="map-section__title">Jak do nas trafić</h2>
+          <div class="map-section__frame">
+            <iframe
+              class="map-section__iframe"
+              title="Mapa — Olka Detailing, Gdynia"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1159.3969615876488!2d18.484528!3d54.4665729!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda1ab087583a5%3A0xe16ec4ee08f6ee43!2sOlka%20Detailing!5e0!3m2!1spl!2spl!4v1775580863143!5m2!1spl!2spl"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer__inner od-container">
+          <div class="site-footer__phone-wrap">
+            <a class="site-footer__phone" href="tel:+48734753083">+48 734 753 083</a>
+          </div>
+          <div class="site-footer__social">
+            <a class="site-footer__social-link" href="https://www.facebook.com/share/1EwocP1HZk/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M22 12.06C22 6.48 17.52 2 11.94 2 6.36 2 1.88 6.48 1.88 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.42V9.41c0-2.39 1.43-3.7 3.6-3.7 1.04 0 2.13.19 2.13.19v2.34h-1.2c-1.18 0-1.55.73-1.55 1.48v1.78h2.64l-.42 2.91h-2.22v7.03c4.78-.76 8.44-4.92 8.44-9.94z"
+                />
+              </svg>
+            </a>
+            <a class="site-footer__social-link" href="https://www.instagram.com/olka_detailing/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"
+                />
+              </svg>
+            </a>
+            <a class="site-footer__social-link" href="https://wa.me/48734753083" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+                />
+              </svg>
+            </a>
+            <a class="site-footer__social-link" href="https://www.tiktok.com/@olkadetailing" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M16.6 5.82s.51.5 1.3.86c.78.35 1.7.52 1.7.52v3.25a4.5 4.5 0 0 1-2.5-.9v5.95a5.6 5.6 0 1 1-5.6-5.6c.12 0 .24.01.36.02v3.35a2.3 2.3 0 0 0-.36-.03 2.35 2.35 0 1 0 2.35 2.35V2h3.15a4.4 4.4 0 0 0 1.6 3.82z"
+                />
+              </svg>
+            </a>
+          </div>
+          <nav class="site-footer__nav" aria-label="Nawigacja w stopce">
+            <ul class="site-footer__nav-list">
+              <li><a class="site-footer__nav-link" href="/">Strona główna</a></li>
+              <li><a class="site-footer__nav-link" href="/cennik.html">Cennik</a></li>
+              <li><a class="site-footer__nav-link" href="/realizacje">Realizacje</a></li>
+              <li><a class="site-footer__nav-link" href="/kontakt.html">Kontakt</a></li>
+            </ul>
+          </nav>
+          <p class="site-footer__copy">© 2025 Olka Detailing. Wszelkie prawa zastrzeżone.</p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      ;(function () {
+        var form = document.querySelector('.contact-form')
+        if (!form) return
+        form.addEventListener('submit', function (e) {
+          e.preventDefault()
+          alert('Dziękujemy za kontakt! Odezwiemy się wkrótce.')
+          form.reset()
+        })
+      })()
+    </script>
+  </body>
+</html>
