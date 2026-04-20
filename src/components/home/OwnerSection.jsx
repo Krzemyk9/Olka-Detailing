@@ -35,18 +35,14 @@ export default function OwnerSection() {
 
         <div className="relative">
           <div
-            className="aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#141414] via-[#0f1729] to-[#0a0a0a] shadow-[0_24px_80px_-24px_rgba(0,71,171,0.35)]"
-            role="img"
-            aria-label="Miejsce na zdjęcie właściciela lub zespołu"
+            className="aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#141414] via-[#0f1729] to-[#0a0a0a] shadow-[0_24px_80px_-24px_rgba(0,71,171,0.35)] flex items-center justify-center"
           >
-            <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-              <span className="text-xs font-medium uppercase tracking-[0.25em] text-[#f5f5f5]/35">
-                Profesjonalne zdjęcie
-              </span>
-              <span className="mt-3 max-w-[220px] text-sm text-[#f5f5f5]/45">
-                Podmień ten placeholder na portret lub zespół w studiu.
-              </span>
-            </div>
+            <img
+              src="/profesjonalne-zdjecie.png"
+              alt="Profesjonalne zdjęcie właściciela studia Olka Detailing"
+              className="h-full w-full object-cover object-center"
+              loading="lazy"
+            />
           </div>
           <div
             className="pointer-events-none absolute -bottom-3 -right-3 h-24 w-24 rounded-full border border-[#d4af37]/25 bg-[#d4af37]/5 blur-2xl"

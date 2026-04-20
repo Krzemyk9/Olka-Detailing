@@ -56,9 +56,9 @@ const CARE_SERVICES = [
 ]
 
 const CARE_ADDONS = [
-  { name: 'Aplikacja wosku spray', desc: 'Wybłyszczenie, hydrofobowość, trwałość ok. 6 tygodni', price: '50' },
-  { name: 'Aplikacja QD skóry', desc: 'Odświeżenie i utrwalenie zabezpieczenia tapicerki skórzanej', price: '50' },
-  { name: 'Niewidzialna wycieraczka', desc: 'Hydrofobizacja szyby — lepsza widoczność w deszczu, od 45 km/h', price: '100' },
+  { name: 'Aplikacja wosku spray', desc: 'Wybłyszczenie, hydrofobowość, trwałość ok. 6 tygodni', prices: { sedan: '50', suv: '50', van: '50' } },
+  { name: 'Aplikacja QD skóry', desc: 'Odświeżenie i utrwalenie zabezpieczenia tapicerki skórzanej', prices: { sedan: '50', suv: '50', van: '50' } },
+  { name: 'Niewidzialna wycieraczka', desc: 'Hydrofobizacja szyby — lepsza widoczność w deszczu, od 45 km/h', prices: { sedan: '100', suv: '100', van: '100' } },
 ]
 
 const DETAILING_WASH = {
@@ -74,7 +74,7 @@ const DETAILING_WASH = {
     'Zabezpieczenie felg, tworzyw i opon',
     'Mycie szyb wewnątrz i na zewnątrz',
   ],
-  price: 'od 700',
+  prices: { sedan: 'od 700', suv: 'od 700', van: 'od 700' },
 }
 
 const DETAILING_INTERIOR = {
@@ -137,19 +137,19 @@ const POLISHING = [
   {
     name: 'Odświeżenie lakieru',
     desc: 'Jednoetapowa korekta lakieru z myciem detailingowym i aplikacją twardego wosku. Usunięcie mikrozarysowań, wybłyszczenie.',
-    price: 'od 1 500',
+    prices: { sedan: 'od 1 500', suv: 'od 1 500', van: 'od 1 500' },
   },
   {
     name: 'Pełna renowacja lakieru',
     desc: 'Dwu- lub wieloetapowa korekta z myciem detailingowym i aplikacją wosku. Usunięcie rys, przywrócenie blasku.',
-    price: 'od 2 800',
+    prices: { sedan: 'od 2 800', suv: 'od 2 800', van: 'od 2 800' },
   },
 ]
 
 const COATINGS = [
-  { name: 'Powłoka roczna', desc: 'Głębia koloru, szkliste wykończenie, hydrofobowość, ochrona przed zabrudzeniami i utlenianiem', price: 'od 1 150' },
-  { name: 'Powłoka dwuletnia', desc: 'Wysoki połysk, duża śliskość, odporna na agresywną chemię i promieniowanie UV', price: 'od 2 000' },
-  { name: 'Powłoka pięcioletnia', desc: 'Silne odbicie, właściwości samoczyszczące, ochrona przed mikrorysami, solą, chemikaliami i UV', price: 'od 3 500' },
+  { name: 'Powłoka roczna', desc: 'Głębia koloru, szkliste wykończenie, hydrofobowość, ochrona przed zabrudzeniami i utlenianiem', prices: { sedan: 'od 1 150', suv: 'od 1 150', van: 'od 1 150' } },
+  { name: 'Powłoka dwuletnia', desc: 'Wysoki połysk, duża śliskość, odporna na agresywną chemię i promieniowanie UV', prices: { sedan: 'od 2 000', suv: 'od 2 000', van: 'od 2 000' } },
+  { name: 'Powłoka pięcioletnia', desc: 'Silne odbicie, właściwości samoczyszczące, ochrona przed mikrorysami, solą, chemikaliami i UV', prices: { sedan: 'od 3 500', suv: 'od 3 500', van: 'od 3 500' } },
 ]
 
 const PPF_SINGLES = [
@@ -408,13 +408,13 @@ export default function Pricing() {
           <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-[#f5f5f5]/40">
             Dodatkowo
           </h3>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="space-y-6">
             {CARE_ADDONS.map((addon, i) => (
-              <FlatPriceCard
+              <PriceCard
                 key={addon.name}
                 name={addon.name}
-                desc={addon.desc}
-                price={addon.price}
+                subtitle={addon.desc}
+                prices={addon.prices}
                 index={i}
               />
             ))}
@@ -431,23 +431,12 @@ export default function Pricing() {
         />
 
         {/* Mycie detailingowe */}
-        <Motion.article
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-40px' }}
-          className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 sm:p-6"
-        >
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold text-[#f5f5f5]">{DETAILING_WASH.name}</h3>
-              <ServiceItemList items={DETAILING_WASH.items} />
-            </div>
-            <p className="shrink-0 text-2xl font-semibold text-[#d4af37] sm:text-right">
-              {DETAILING_WASH.price}&nbsp;zł
-            </p>
-          </div>
-        </Motion.article>
+        <PriceCard
+          name={DETAILING_WASH.name}
+          items={DETAILING_WASH.items}
+          prices={DETAILING_WASH.prices}
+          index={0}
+        />
 
         {/* Detailing wnętrza */}
         <div className="mt-6">
@@ -488,9 +477,15 @@ export default function Pricing() {
           icon={SECTION_ICONS.polishing}
           title="Polerowanie"
         />
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="space-y-6">
           {POLISHING.map((item, i) => (
-            <FlatPriceCard key={item.name} {...item} index={i} />
+            <PriceCard
+              key={item.name}
+              name={item.name}
+              subtitle={item.desc}
+              prices={item.prices}
+              index={i}
+            />
           ))}
         </div>
 
@@ -503,9 +498,15 @@ export default function Pricing() {
             Dodatkowo do jednego z pakietów korekty lakieru. Zabezpieczenie lakieru,
             reflektorów, lamp i tworzyw sztucznych.
           </p>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="space-y-6">
             {COATINGS.map((item, i) => (
-              <FlatPriceCard key={item.name} {...item} index={i} />
+              <PriceCard
+                key={item.name}
+                name={item.name}
+                subtitle={item.desc}
+                prices={item.prices}
+                index={i}
+              />
             ))}
           </div>
         </div>

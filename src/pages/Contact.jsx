@@ -126,7 +126,7 @@ export default function Contact() {
               {/* Phone */}
               <a
                 href={`tel:${PHONE_NUMBER}`}
-                className="flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-4 text-[#f5f5f5] transition duration-300 hover:border-[#d4af37]/30 hover:bg-[#d4af37]/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d4af37]/60"
+                className="flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-4 text-[#f5f5f5] transition duration-300 hover:border-[#d4af37]/30 hover:bg-[#d4af37]/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d4af37]/60 sm:col-span-2"
               >
                 <Phone className="size-5 shrink-0 text-[#d4af37]" aria-hidden />
                 <span className="text-sm font-medium">{PHONE_DISPLAY}</span>
